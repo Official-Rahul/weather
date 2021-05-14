@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import FiveDay from "./components/FiveDay";
+import Today from "./components/Today";
 
 export default function App() {
-    return (
-        <div>
-            <h1>Welcome {new Date().toString()}</h1>
-        </div>
-    )
+  return (
+    <div className="app">
+      <Today />
+      <FiveDay />
+    </div>
+  );
 }

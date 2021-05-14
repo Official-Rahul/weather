@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c8eff9;
+  color: #efefef;
+  font-family: serif, sans-serif;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.today {
+  height: 300px;
+  width: 300px;
+  background-color: #f27d42;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.today .wind {
+  margin-top: 20px;
+}
+
+.five-day {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.day {
+  height: 200px;
+  width: 200px;
+  background-color: #55bdca;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
