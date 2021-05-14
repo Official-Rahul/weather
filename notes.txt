@@ -1,0 +1,15 @@
+// https://github.com/bradtraversy/react_webpack_starter
+
+1. Initialize as NPM repository
+npm init -y
+
+2. Install React and React DOM packages
+npm i react react-dom
+
+3. Install Dev dependencies
+npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader 
+    file-loader css-loader sass-loader sass style-loader webpack webpack-cli
+
+4. Create babelrc file
+
+5. Create Webpack config file
