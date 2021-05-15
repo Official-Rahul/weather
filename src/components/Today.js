@@ -32,6 +32,7 @@ export default function Today({ city }) {
 
   return (
     <>
+      {!todayWeather && <div className="loader">Loading...</div>}
       {todayWeather && (
         <div className="today">
           <div className="temp">
@@ -43,12 +44,13 @@ export default function Today({ city }) {
       {todayWeather && (
         <div className="days">
           <div className="day">
-            <h3>{todayWeather.humidity}</h3>
+            <h3>{todayWeather.humidity} %</h3>
             <span>Humidity</span>
           </div>
           <div className="day">
             <h3>{todayWeather.wind_kph} kmph</h3>
-            <span>Direction {todayWeather.wind_dir}</span>
+            <span>Wind</span>
+            {/* <span>Direction {todayWeather.wind_dir}</span> */}
           </div>
           <div className="day">
             <h3>{todayWeather.cloud} Cloudy</h3>
