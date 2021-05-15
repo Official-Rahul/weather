@@ -1,14 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-export default function FiveDay({ city }) {
+export default function Forecast({ city }) {
   const [weathers, setWeathers] = useState([]);
 
   useEffect(() => {
-    getFiveDayForecast();
+    getForecast();
   }, []);
 
-  const getFiveDayForecast = () => {
+  const getForecast = () => {
     const options = {
       method: "GET",
       url: "https://weatherapi-com.p.rapidapi.com/forecast.json",
@@ -31,8 +31,7 @@ export default function FiveDay({ city }) {
   };
 
   return (
-    <div className="five-day">
-      {weathers.length == 0 && <h1>loading...</h1>}
+    <div className="days">
       {weathers.length > 0 &&
         weathers.map((weather) => (
           <div className="day">

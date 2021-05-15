@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-export default function Today({city}) {
+export default function Today({ city }) {
   const [todayWeather, setTodayWeather] = useState(null);
 
   useEffect(() => {
@@ -32,7 +32,6 @@ export default function Today({city}) {
 
   return (
     <>
-      {!todayWeather && <h3>{"loading..."}</h3>}
       {todayWeather && (
         <div className="today">
           <div className="temp">
@@ -42,7 +41,7 @@ export default function Today({city}) {
         </div>
       )}
       {todayWeather && (
-        <div className="five-day">
+        <div className="days">
           <div className="day">
             <h3>{todayWeather.humidity}</h3>
             <span>Humidity</span>
