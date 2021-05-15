@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-export default function Today() {
+export default function Today({city}) {
   const [todayWeather, setTodayWeather] = useState(null);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function Today() {
     const options = {
       method: "GET",
       url: "https://weatherapi-com.p.rapidapi.com/current.json",
-      params: { q: "London" },
+      params: { q: city },
       headers: {
         "x-rapidapi-key": "c6e6fcdf32msh4da59f020dcf190p1228adjsn2f512fffebc9",
         "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
@@ -31,11 +31,32 @@ export default function Today() {
   };
 
   return (
-    <div className="today">
-      <div className="temp">
-        {!todayWeather && <h1>{"loading..."}</h1>}
-        {todayWeather && <h1>{todayWeather.temp_c}&deg; C</h1>}
-      </div>
-    </div>
+    <>
+      {!todayWeather && <h3>{"loading..."}</h3>}
+      {todayWeather && (
+        <div className="today">
+          <div className="temp">
+            <h1>{todayWeather.temp_c}&deg; C</h1>
+            <h3>Feels like {todayWeather.feelslike_c}&deg; C</h3>
+          </div>
+        </div>
+      )}
+      {todayWeather && (
+        <div className="five-day">
+          <div className="day">
+            <h3>{todayWeather.humidity}</h3>
+            <span>Humidity</span>
+          </div>
+          <div className="day">
+            <h3>{todayWeather.wind_kph} kmph</h3>
+            <span>Direction {todayWeather.wind_dir}</span>
+          </div>
+          <div className="day">
+            <h3>{todayWeather.cloud} Cloudy</h3>
+            <span>{todayWeather.condition.text}</span>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

@@ -18,6 +18,10 @@ h2 {
   font-size: 3em;
 }
 
+h3 {
+  font-size: 2em;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -36,18 +40,26 @@ h2 {
   align-items: center;
 }
 
+.temp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .today .wind {
   margin-top: 20px;
 }
 
-.five-day {
+.five-day,
+.cities {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.day {
+.day,
+.city {
   height: 200px;
   width: 200px;
   background-color: #55bdca;
@@ -55,4 +67,6 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 }

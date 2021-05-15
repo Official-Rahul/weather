@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-export default function FiveDay() {
+export default function FiveDay({ city }) {
   const [weathers, setWeathers] = useState([]);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function FiveDay() {
     const options = {
       method: "GET",
       url: "https://weatherapi-com.p.rapidapi.com/forecast.json",
-      params: { q: "London", days: "5" },
+      params: { q: city, days: "5" },
       headers: {
         "x-rapidapi-key": "c6e6fcdf32msh4da59f020dcf190p1228adjsn2f512fffebc9",
         "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
